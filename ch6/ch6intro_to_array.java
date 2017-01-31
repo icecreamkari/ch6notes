@@ -11,12 +11,14 @@ public class ch6intro_to_array
 
     public static void main (String[] args)
     {
+       mathy useful = new mathy();
        int x = 50;
-       int[] num = new int[20]; // arrays are objects
+       int[] num = new int[1000]; // arrays are objects
        int[] values = new int[20];
        int[] oddnum = new int[num.length]; //
        int[] evennum = new int[num.length];
        int[] negnum = new int[MAX];
+       String[] names = {"Charlie", "Megan", "Tadd", "Patrick", "Jake"};
 
        Random gen = new Random();
        // pop with random  numbers range -50 to 50
@@ -25,15 +27,18 @@ public class ch6intro_to_array
        {
             num[i] = gen.nextInt(100)-50;
         }
-
+        
+        /*
        //prints the aray of int ---- off by one error < not <= -------
        for(int i = num.length; i<num.length; i++)
        {
             System.out.println( num[i] );
         }
+        */
         
+        oddnum = useful.getOdd(num);
         //for each look
-        for (int s : num)
+        for (int s : oddnum)
         {
             System.out.println( s );
         }
@@ -41,14 +46,15 @@ public class ch6intro_to_array
 
 
 
-        /*
+        
         int look = 42;
 
-        System.out.println(Searches.linearSearch(num,look)  );
-        System.out.println(Searches.binarySearch(num,look)  );
+        System.out.println("Found"+Searches.linearSearch(num,look)  );
+        Sorts.selectionSort(num);
+        System.out.println("Found"+Searches.binarySearch(num,look)  );
 
 
-
+        /*
       
         //Sorts.selectionSort(num);
         System.out.println(num.length  );
@@ -91,17 +97,17 @@ public class ch6intro_to_array
        //for (int i = 0; i<50;i++)
        //   System.out.println("The number of times" + (i-25) +"is" +
        //                       "\t" + values[i]);
-       */
+       /*
 
 
-
+      /*
 
        foo(num[0]);
        System.out.println("*****"+num[0]);
        
        foo(num);
-       System.out.println("&&&&7&"+num[0]);
-       
+       System.out.println("&&&&&&"+num[0]);
+       /*
        /*
        System.out.println(oddnum[7]);
 
@@ -109,7 +115,8 @@ public class ch6intro_to_array
 
        negnum = neg(num);*/
    }// end of main
-
+   
+   
    public static int[] doubleSize(int[] array)
    {
         return array;
@@ -122,12 +129,14 @@ public class ch6intro_to_array
        x = 100;
 
    }
+   
 
    public static void foo(int [] num)
    {
 
    }
-
+   
+   
    public static void odd(int[] m_num, int[] m_odd)
    {
 

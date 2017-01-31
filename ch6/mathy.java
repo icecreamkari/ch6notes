@@ -47,28 +47,47 @@ public class mathy
         @return int[] odd values in the array
     */
 
-    public  int[] getOdd ( int[] num1)
+    public int[] getOdd ( int[] num1)
     {   int i = 0;
+        int z = 0;
         int [] odd = new int[num1.length];
         
         for ( ; i < num1.length; i++)
         {
             if (num1[i]%2 != 0)
                 {
-                    odd[i] = num1[i];
+                    odd[z] = num1[i];
+                    z++;
                 }      
         }
         
         return odd;
     }//end of getOdd
-
+    
+    /**
+     * takes the even numbers out of an array
+     * @param int[] values, int[] even values
+     * @return none
+     */
     public void getEven(int[] num, int evennum [])
     {
+        int i = 0;
+        int z = 0;
+        
+        int[] even = new int[num.length];
         
         
-
-
-
+        for( ; i < num.length; i++)
+        {
+            if (num[i]%2 == 0)
+            {
+                even[z] = num[i];
+                z++;
+            }
+        }
+        
+        
+        //[] evenum = new int[] even;
     }//end of getEven
 
 
