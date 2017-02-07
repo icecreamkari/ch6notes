@@ -13,7 +13,7 @@ public class mathy
     */
     public mathy()
     {
-            System.out.println ("hi from default constructor");
+            //System.out.println ("hi from default constructor");
 
     }
 
@@ -114,7 +114,36 @@ public class mathy
 
         return x+y;
     }
-
+    
+    /**
+     * displays marbles
+     */
+    public void display(int [] row1, int [] row2, int [] row3)
+    {
+        int[] mrow1 = new int[row1.length];
+        int[] mrow2 = new int[row2.length];
+        int[] mrow3 = new int[row3.length];
+        
+        for (int m : mrow1)
+        {
+            System.out.print(m);            
+        }
+        
+        System.out.println();
+        
+        for (int m : mrow2)
+        {
+            System.out.print(m);            
+        }
+        
+        System.out.println();
+        
+        for (int m : mrow3)
+        {
+            System.out.print(m);            
+        }
+    }
+    
     /**
             message from Mathy class
             @param none
@@ -146,28 +175,43 @@ public class mathy
 
     }
 
-
+    
+    /**
+     * return total of entire 2d array
+     */
     public static int sum2DArray(int [][] scores)
     {
-
+        int sum = 0;
 
 
         for ( int row=0; row < scores.length; row++)
         {
             for ( int col=0; col < scores[row].length; col++)
+            {
                 System.out.print (scores[row][col] + "\t");
-
+                sum += scores[row][col];
+            }
             System.out.println();
         }
 
 
-        return 0;
+        return sum;
 
     }
-
-    public int sumOneRow2DArray(int row)
+    
+    /**
+     * gets the sum of one row of the array
+     */
+    public int sumOneRow2DArray(int [][] array, int row)
     {   int total = 0;
-
+        
+        
+        for (int col = 0; col < array[row].length; col++)
+        {
+                System.out.print (array[row][col] + "\t");
+                total += array[row][col];
+            
+        }
 
 
 
@@ -175,6 +219,27 @@ public class mathy
 
     }
 
+        /**
+     * gets the sum of one coloumn of the array
+     */
+    public int sumOneCol2DArray(int [][] array, int col)
+    {   int total = 0;
+        
+
+        for ( int row=0; row < array.length; row++)
+        {
+            System.out.print (array[col] + "\t");
+            total += array[row][col];
+            
+            System.out.println();
+        }
+    
+
+
+        return total;
+
+    }
+    
     public int[] sumall2DArray(int [][] scores)
     {
         int [] temp = {1,2,3,4,};
@@ -184,7 +249,9 @@ public class mathy
 
         return temp;
     }
+    
 
+    
     /**
         Doubles the size of an array
         @param int []

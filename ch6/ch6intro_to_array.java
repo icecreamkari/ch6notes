@@ -12,7 +12,7 @@ public class ch6intro_to_array
     public static void main (String[] args)
     {
        mathy useful = new mathy();
-       int x = 50;
+       int x = 42;
        int[] num = new int[1000]; // arrays are objects
        int[] values = new int[20];
        int[] oddnum = new int[num.length]; //
@@ -35,7 +35,7 @@ public class ch6intro_to_array
             System.out.println( num[i] );
         }
         */
-        
+        /*
         oddnum = useful.getOdd(num);
         //for each look
         for (int s : oddnum)
@@ -46,17 +46,24 @@ public class ch6intro_to_array
 
 
 
-        
+        /*
         int look = 42;
 
         System.out.println("Found"+Searches.linearSearch(num,look)  );
         Sorts.selectionSort(num);
         System.out.println("Found"+Searches.binarySearch(num,look)  );
-
+        */
 
         /*
+        Sorts.selectionSort(num);
+        for (int s : num)
+        {
+            System.out.println( s );
+        }
+        
+        /*
       
-        //Sorts.selectionSort(num);
+        Sorts.selectionSort(num);
         System.out.println(num.length  );
         num = doubleSize(num);
 
@@ -64,7 +71,7 @@ public class ch6intro_to_array
         for (int s : num)
         {
         }
-
+        /*
 
         odd(num,oddnum);
 
@@ -114,6 +121,50 @@ public class ch6intro_to_array
        odd(num,oddnum);
 
        negnum = neg(num);*/
+       
+       
+       
+       
+       //make a 2d array with an initializer list
+       //work for any time of array as long as curly brackets are used
+       //print the length of row and col
+       
+       //[row][coloumn]       
+       int[][] scores = { {1,2,3}, //6
+                          {2,2,3}, //7
+                          {3,2,3}, //8
+                          {4,2,3}   };//9
+                          
+                          
+      System.out.println(scores[0].length+"col");
+      System.out.println(scores.length+"row");;
+      
+      //System.out.println("the sum of this array is " + mathy.sum2DArray(scores));
+
+      //System.out.print(mathy.sum2DArray(scores, 3));
+      //System.out.print(mathy.sumrow(scores[0]));
+      
+      //System.out.println("the sum of one row is " + mathy.sumOneRow2DArray(scores, 1));
+      
+      //System.out.println("the sum of the coloumn is " + mathy.sumOneCol2DArray(scores, 0));
+      
+      //makes a two dimensional array
+      int[][] table = new int[5][10];
+      
+      //load the table with values
+      for (int row = 0; row < table.length; row++)
+        for (int col = 0; col < table[row].length; col++)
+            table[row][col] = row * 10 + col;
+            
+      //print the table
+      for (int row = 0; row < table.length; row++)
+      {
+          for (int col = 0; col < table[row].length; col++)
+                System.out.print(table[row][col] + "\t");
+                
+          System.out.println();
+        }
+       
    }// end of main
    
    
