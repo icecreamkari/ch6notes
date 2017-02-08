@@ -11,6 +11,23 @@ public class GameofNim
         int[] row2 = new int[5];
         int[] row3 = new int[3];
         
+        
+        for(int i = 0; i <row1.length; i++)
+        {
+            row1[i] = 1;
+        }
+        
+        for(int i = 0; i <row2.length; i++)
+        {
+            row2[i] = 1;
+        }
+        
+        for(int i = 0; i <row3.length; i++)
+        {
+            row3[i] = 1;
+        }
+        
+      
         display.display(row1, row2, row3);
         
         Scanner keyboard = new Scanner(System.in);
@@ -33,27 +50,29 @@ public class GameofNim
         {
             if (row == 1)
             {
-                marblesleft = row1.length - number;
-                int[] mrow1 = new int[marblesleft];
-                display.display(mrow1, row2, row3);
-                count -= marblesleft;
+                for (int i = 0; i < number; i++)
+                    row1[i] = 0;
+                
+
+                count -= number;
             }
             else if (row == 2)
             {
-                marblesleft = row2.length - number;
-                int[] mrow2 = new int[marblesleft];
-                display.display(row1, mrow2, row3);
-                count -= marblesleft;
+                for (int i = 0; i < number; i++)
+                    row2[i] = 0;
+                count -= number;
             }
             else
             {
-                marblesleft = row3.length - number;
-                int[] mrow3 = new int[marblesleft];
-                display.display(row1, row2, mrow3);
-                count -= marblesleft;
+             
+                for (int i = 0; i < number; i++)
+                    row3[i] = 0;
+                count -= number;
             }
             
-                            System.out.println(count);
+            display.display(row1, row2, row3);
+                
+                            //System.out.println(count);
             
             if (turn %2 == 0)
             {
@@ -67,15 +86,9 @@ public class GameofNim
                 turn++;
             }
             
-            else{
-                System.out.println();
-                System.out.println("Which row would you like to take marbles from?");
-                row = keyboard.nextInt();
-                
-                System.out.println("How many marbles would you like to take?");
-                number = keyboard.nextInt();
-                
-                turn++;
+            else{ //computer ai
+                if (count %2 ==
+             
             }
         }
         

@@ -120,25 +120,22 @@ public class mathy
      */
     public void display(int [] row1, int [] row2, int [] row3)
     {
-        int[] mrow1 = new int[row1.length];
-        int[] mrow2 = new int[row2.length];
-        int[] mrow3 = new int[row3.length];
         
-        for (int m : mrow1)
+        for (int m : row1)
         {
             System.out.print(m);            
         }
         
         System.out.println();
         
-        for (int m : mrow2)
+        for (int m : row2)
         {
             System.out.print(m);            
         }
         
         System.out.println();
         
-        for (int m : mrow3)
+        for (int m : row3)
         {
             System.out.print(m);            
         }
