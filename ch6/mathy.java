@@ -118,7 +118,7 @@ public class mathy
     /**
      * displays marbles
      */
-    public void display(int [] row1, int [] row2, int [] row3)
+    public void display(int [] row1, int [] row2, int [] row3, int [] row4)
     {
         
         for (int m : row1)
@@ -139,6 +139,15 @@ public class mathy
         {
             System.out.print(m);            
         }
+        
+        System.out.println();
+        
+        for (int m : row4)
+        {
+            System.out.print(m);            
+        }
+        
+        System.out.println();
     }
     
     /**
