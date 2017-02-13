@@ -3,7 +3,7 @@
 
 public class magicSquare
 {
-    int MagicNum;
+    int MagicNum = 0;
     boolean magic = true;
     
     /**
@@ -11,14 +11,12 @@ public class magicSquare
      */
     public magicSquare(int [][] array)
     {
+        int [][] square = array;
+        
         for (int row = 0; row < array.length; row++)
-        {
-            for (int col = 0; col < array[row].length; col++)
-                if (array[row][col] == array[table[row].length][table.length])
-                    MagicNum = table[row][col];
-                else
-                    magic = false;
-        }   
+         {    
+             MagicNum += array[row][0];
+         }
     }
     
     /**
@@ -26,6 +24,38 @@ public class magicSquare
      */
     public boolean isMagic()
     {
+        
+        
+        for (int row = 0; row < square.length; row++)
+        {
+            int colsum = 0;
+            
+            colsum += square[row][0];
+            
+            if (colsum == MagicNum)
+                magic = true;
+            else
+            {
+                magic = false;
+                row = square.length;
+            }
+        }
+        
+        for (int col = 0; col < square[row].length; col++)
+        {
+            int rowsum = 0;
+            
+            rowsum += square[0][col];
+            
+            if (rowsum == MagicNum)
+                magic = true;
+            else
+            {
+                magic = false;
+                col = square[row].length;
+            }
+        }
+        
         return magic;
     }
     
@@ -50,7 +80,7 @@ public class magicSquare
     /**
      * adds a row
      */
-    int addRow(int row)
+    public int addRow(int row)
     {
         
     }
@@ -58,10 +88,15 @@ public class magicSquare
     /**
      * adds a coloumn
      */
-    int addColoumn(int col)
+    public int addColoumn(int col)
     {
         
         
     }
+    
+    public String toString()
+    {
+        
 
+    }
 }
