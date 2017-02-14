@@ -3,6 +3,7 @@ import java.text.NumberFormat;
 import javax.swing.*;
 import java.util.StringTokenizer;
 import java.util.*;
+//import java.util.ArrayList;
 
 public class ch6intro_to_array
 
@@ -11,6 +12,87 @@ public class ch6intro_to_array
 
     public static void main (String[] args)
     {
+       //this is a general ArrayList
+       //needs util imported
+       ArrayList list = new ArrayList();
+       
+       //can only hold strings inside
+       //type of array list can only hold the type
+       ArrayList <String> farm = new ArrayList<>();
+       
+       //takes only one object at a time
+        farm.add("cow");
+        farm.add("pig");
+        farm.add("chicken");
+        farm.add("duck");
+        
+        System.out.println(farm);
+        
+        for (int i = 0; i < 20; i++)
+        {
+            farm.add("cow");
+            farm.add("dog");
+            farm.add("horse");
+            farm.add("chicken");
+            farm.add("chicken");          
+        }
+        
+        System.out.println(farm);
+        
+        int count = 0;
+        
+        //go backwards to not skip items when array list is collapsed
+        //for (int i = farm.size() - 1; i >= 0; i--);
+        //remove i++ here, else increment in body of code
+        for (int i = 0; i < farm.size(); i++)
+        {
+            if (farm.get(i).equals("cow"))
+            {
+                count++;
+            }
+            
+            if (farm.get(i).equals("dog"))
+                farm.set(i, "cat");
+                //.set method returns the object at the index then changes it
+                //returns then replaces the object there and then returns it
+                
+            
+            //after removing an element, all the elements will shift up in the index
+            //if you have two or more elements in a row, it will skip it
+            if (farm.get(i).equals("chicken"))
+            {
+                farm.remove(i);
+            }
+            
+            //while (farm.remove("chicken") ---> goes through the whole list
+            //farm.remove returns a boolean, it will remove the first instance of the object
+            
+            
+            /*
+            //to not skip over elements when removing them
+            //change for loop
+            if (farm.get(i).equals("chicken"))
+            {
+                farm.remove(i);
+                //i--;
+            }*/
+        }
+        
+         System.out.println("There are " + count + " cows");
+         System.out.println(farm);
+         
+         
+         
+         
+         //------------------------------------------------------------------------
+         
+         ArrayList <CD> mycds = new Arraylist<>();
+         
+         mycds.add(new CD("Wilco", "Jeff Tweety", 12.99, 16));
+         
+         System.out.print(mycds);
+         
+        /*
        mathy useful = new mathy();
        int x = 42;
        int[] num = new int[1000]; // arrays are objects
@@ -128,7 +210,7 @@ public class ch6intro_to_array
        //make a 2d array with an initializer list
        //work for any time of array as long as curly brackets are used
        //print the length of row and col
-       
+       /*
        //[row][coloumn]       
        int[][] scores = { {1,2,3}, //6
                           {2,2,3}, //7
@@ -165,9 +247,10 @@ public class ch6intro_to_array
           System.out.println();
         }
        
-   }// end of main
-   
-   
+       */
+       }// end of main
+       
+       
    public static int[] doubleSize(int[] array)
    {
         return array;
@@ -195,14 +278,14 @@ public class ch6intro_to_array
 
 
    }// end of odd
-
-    /*
-     public static int[] neg(int[] m_num)
-      {
-
-
-       return negarray;
-   }//end of neg*/
+    
+        /*
+         public static int[] neg(int[] m_num)
+          {
+    
+    
+           return negarray;
+       }//end of neg*/
 
 
 }// end of class

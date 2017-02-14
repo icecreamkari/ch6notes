@@ -4,7 +4,7 @@
 public class magicSquare
 {
     int MagicNum = 0;
-    boolean magic = true;
+    //boolean magic = true;
     
     /**
      * sets the magic number = 1 row/1 col of the array
@@ -24,32 +24,33 @@ public class magicSquare
      */
     public boolean isMagic(int [][] square)
     {
-                // Check each row.
-        for (int i = 0; i < 3; i++)
+        // Check each row.
+        for (int col = 0; col < square.length; col++)
         {
-            // Find the sum of row #i.
+            // find the sum of each row
             int sum = 0;
-            for (int j = 0; j < 3; j++)
-                sum += square[i][j];
+            for (int row = 0; row < square.length; row++)
+                sum += square[row][col];
 
             // If this row does not equal 15, then it is not a magic square
             if (sum != MagicNum)
                 return false;
         }
 
-        // Check each column.
-        for (int j = 0; j < 3; j++)
+        // Check each column
+        for (int row = 0; row < square.length; row++)
         {
-            // Find the sum of column #j.
+            // find the sum of each coloumn
             int sum = 0;
-            for (int i = 0; i < 3; i++)
-                sum += square[i][j];
+            for (int col = 0; col < square.length; col++)
+                sum += square[row][col];
 
             // If this column does not equal 15, then it is not a magic square
             if (sum != MagicNum)
                 return false;
         }
-
+        
+        /*
         // Check forward diagonal.
         if (square[0][0] + square[1][1] + square[2][2] != MagicNum)
             return false;
@@ -57,7 +58,7 @@ public class magicSquare
         // Check backward diagonal.
         if (square[0][2] + square[1][1] + square[2][0] != MagicNum)
             return false;
-
+            */
         return true;
     }
     
