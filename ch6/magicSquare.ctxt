@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=array
+comment0.target=magicSquare(int[][])
+comment0.text=\r\n\ sets\ the\ magic\ number\ \=\ 1\ row/1\ col\ of\ the\ array\r\n
+comment1.params=square
+comment1.target=boolean\ isMagic(int[][])
+comment1.text=\r\n\ checks\ if\ the\ square\ is\ magic\r\n
+comment2.params=
+comment2.target=int\ getMagicNum()
+comment2.text=\r\n\ gets\ the\ magic\ number\r\n
+comment3.params=array
+comment3.target=void\ setMagicSquare(int[][])
+comment3.text=\r\n\ sets\ the\ magic\ square\r\n
+numComments=4
