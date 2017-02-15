@@ -4,66 +4,89 @@
 public class magicSquare
 {
     int MagicNum = 0;
+    
     //boolean magic = true;
     
     /**
      * sets the magic number = 1 row/1 col of the array
      */
-    public magicSquare(int [][] array)
+    public magicSquare(int [][] square)
     {
-        for (int row = 0; row < array.length; row++)
-         {    
-             MagicNum += array[row][0];
-         }
         
-        setMagicSquare(array);
+        //adds up the first row of the array
+        for (int row = 0; row < square.length; row++)
+         {    
+             //sets the magicnumber to that row's sum
+             MagicNum += square[row][0];
+         }
     }
     
     /**
      * checks if the square is magic
+     * @param
      */
     public boolean isMagic(int [][] square)
     {
-        // Check each row.
+        //checks each column to see if it adds up to the magic number
         for (int col = 0; col < square.length; col++)
         {
-            // find the sum of each row
+            //resets the sum to 0 each time
             int sum = 0;
+            //finds the sum of each new coloumn
             for (int row = 0; row < square.length; row++)
                 sum += square[row][col];
 
-            // If this row does not equal 15, then it is not a magic square
+            //if the coloumn does not add up to the magic number
+            //it will return false and stop computing
             if (sum != MagicNum)
                 return false;
         }
 
-        // Check each column
+        //checks each row to see if it adds up to the magic number
         for (int row = 0; row < square.length; row++)
         {
-            // find the sum of each coloumn
-            int sum = 0;
+            //resets the sum to 0 each time it runs
+            int sum = 0;           
+            //finds the sum of each new coloumn
             for (int col = 0; col < square.length; col++)
                 sum += square[row][col];
-
-            // If this column does not equal 15, then it is not a magic square
+            
+            //if the row does not add up to the magic number
+            //it will return false and stop computing
             if (sum != MagicNum)
                 return false;
         }
         
-        /*
+        
         // Check forward diagonal.
-        if (square[0][0] + square[1][1] + square[2][2] != MagicNum)
-            return false;
+        for (int row = 0; row < square.length; row++)
+        {
+            int sum = 0;
+            sum += square[row][square.length + row - 1];
+            
+            if (sum != MagicNum)
+                return false;
+        }
 
         // Check backward diagonal.
-        if (square[0][2] + square[1][1] + square[2][0] != MagicNum)
-            return false;
-            */
+        for (int row = 0; row < square.length; row++)
+        {
+            int sum = 0;
+            sum += square[row][square.length - row + 1];
+            
+            if (sum != MagicNum)
+                return false;
+        }
+        
+        
+        //if all checks are equivalent
+        //returns true - it is a magic square
         return true;
     }
     
     /**
      * gets the magic number
+     * @param none
      */
     public int getMagicNum()
     {
@@ -72,71 +95,20 @@ public class magicSquare
     
     
     /**
-     * sets the magic square
+     * sets the magic square to a different square
+     * @param int [][] array
      */
-    public void setMagicSquare(int [][] array)
-    {
-        int [][] square = array;
-    }
-    
-    /**
-     * adds a row
-     *//*
-    public void addRow(int [][] addRow)
+    public void setMagicSquare(int [][] square)
     {
         
-        for (int i = 0; i < addRow.length; i++)
-        {
-            int rowsum = 0;
-        for (int col = 0; col < addRow[i].length; col++)
-        {
-            rowsum += addRow[i][col];
-            
-            if (rowsum != MagicNum)  
-            {
-                magic = false;
-                col = addRow[i].length;
-                i = addRow.length;
-            }
-        }}
+        //adds up the first row of the array
+        for (int row = 0; row < square.length; row++)
+         {    
+             //sets the magicnumber to that row's sum
+             MagicNum += square[row][0];
+         }
     }
-    
-    /**
-     * adds a coloumn
-     *//*
-    public void addColoumn(int [][] addCol)
-    {
-        for (int i = 0; i < addCol.length; i++)
-        {
-            int colsum = 0;
-        for (int row = 0; row < addCol.length; row++)
-        {
-            colsum += addCol[row][i];
-            
-            if (colsum != MagicNum)
-            {
-                magic = false;
-                row = addCol.length;
-                i = addCol.length;
-            }
-        }
-        }   
-    }
-    
-    /**
-     * adds right diagonal
-     *//*
-    public int addRDiagonal(int [][] array)
-    {
-        int sum = 0;
-        
-        for (int i = 0; i < array.length; i ++)
-        {
-            sum += array[i][i];           
-        }        
-        
-        return sum;
-    }
+   
     
     /*
     public String toString(int [][] array)
