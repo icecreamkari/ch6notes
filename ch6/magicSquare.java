@@ -4,6 +4,7 @@
 public class magicSquare
 {
     int MagicNum = 0;
+
     
     //boolean magic = true;
     
@@ -12,6 +13,8 @@ public class magicSquare
      */
     public magicSquare(int [][] square)
     {
+        //int square[][] = new square[][];
+        //square = magicsquare;
         
         //adds up the first row of the array
         for (int row = 0; row < square.length; row++)
@@ -57,27 +60,28 @@ public class magicSquare
                 return false;
         }
         
-        
+        int fdiagonal = 0;
         // Check forward diagonal.
         for (int row = 0; row < square.length; row++)
         {
-            int sum = 0;
-            sum += square[row][square.length + row - 1];
-            
-            if (sum != MagicNum)
-                return false;
+           fdiagonal += square[row][row];
         }
-
-        // Check backward diagonal.
-        for (int row = 0; row < square.length; row++)
-        {
-            int sum = 0;
-            sum += square[row][square.length - row + 1];
+        //if the diagonal does not add up to the magic number
+        //it will return false and stop computing
+        if (fdiagonal!= MagicNum)
+            return false;
             
-            if (sum != MagicNum)
-                return false;
-        }
         
+        // Check backward diagonal.
+        int bdiagonal = 0;
+        for (int row = square.length - 1; row >= 0; row--)
+        {
+           bdiagonal += square[row][row];
+        }
+        //if the diagonal does not add up to the magic number
+        //it will return false and stop computing
+        if (bdiagonal != MagicNum)
+            return false;
         
         //if all checks are equivalent
         //returns true - it is a magic square
@@ -100,13 +104,7 @@ public class magicSquare
      */
     public void setMagicSquare(int [][] square)
     {
-        
-        //adds up the first row of the array
-        for (int row = 0; row < square.length; row++)
-         {    
-             //sets the magicnumber to that row's sum
-             MagicNum += square[row][0];
-         }
+        //magicSquare(square);
     }
    
     
