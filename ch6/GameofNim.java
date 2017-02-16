@@ -11,39 +11,12 @@ public class GameofNim
         //uses mathy to create display
         mathy display = new mathy();
         
-        //creates 4 arrays with 1, 3, 5, and 7 values
-        int[] row1 = new int[1];
-        int[] row2 = new int[3];
-        int[] row3 = new int[5];
-        int[] row4 = new int[7];
-        
-        //adds 1 to each of the the rows for how long it is to represent marbles
-        //row 1 has 1 marble
-        for(int i = 0; i <row1.length; i++)
-        {
-            row1[i] = 1;
-        }
-        
-        //row 2 has 3 marbles
-        for(int i = 0; i <row2.length; i++)
-        {
-            row2[i] = 1;
-        }
-        
-        //row 3 has 5 marbles
-        for(int i = 0; i <row3.length; i++)
-        {
-            row3[i] = 1;
-        }
-        
-        //row 4 has 7 marbles
-        for(int i = 0; i <row4.length; i++)
-        {
-            row4[i] = 1;
-        }
+        //creates an array; with 1, 3, 5, and 7 values
+        int[] marbles = {1, 3, 5, 7};
         
         //displays the marbles
-        display.display(row1, row2, row3, row4);
+        display.display(marbles);
+        
         
         //creates an input
         Scanner keyboard = new Scanner(System.in);
@@ -68,61 +41,12 @@ public class GameofNim
         //while there is more than 1 marbles, the game continues 
         while (count > 1)
         {   
-            //if user wants row 1
-            if (row == 1)
-            {
-                //subtracts marbles from row by turning the 1 into a 0
-                for (int i = 0; i < number; i++)
-                    row1[i] = 0;
-                
-                //updates the total marbles
-                count -= number;
-            }
-            //if user wants row 2
-            else if (row == 2)
-            {
-                //subtracts marbles from row by turning the 1 into a 0
-                for (int i = 0; i < number; i++)
-                    //in case the value is already a 0, it changes the value from the other side
-                    if (row2[i] != 0)   
-                        row2[i] = 0;
-                    else
-                        row2[2-i] = 0;
-                        
-                //updates the total marbles
-                count -= number;
-            }
-            //if user wants row 3
-            else if (row == 3)
-            {
-                //subtracts marbles from row by turning the 1 into a 0
-                for (int i = 0; i < number; i++)
-                    //in case the value is already a 0, it changes the value from the other side
-                    if (row3[i] != 0)   
-                        row3[i] = 0;
-                    else
-                        row3[4-i] = 0;
-                        
-                //updates the total marbles
-                count -= number;
-            }
-            //if user wants row 4
-            else
-            {
-                //subtracts marbles from row by turning the 1 into a 0
-                for (int i = 0; i < number; i++)
-                    //in case the value is already a 0, it changes the value from the other side
-                    if (row4[i] != 0)   
-                        row4[i] = 0;
-                    else
-                        row4[6-i] = 0;
-                        
-                //updates the total marbles
-                count -= number;
-            }
+            //TAKE MARBLES STUFF GOES HERE
+            
+            
             
             //displays the marbles
-            display.display(row1, row2, row3, row4);
+            display.display(marbles);
             
             System.out.println();
 
@@ -170,8 +94,9 @@ public class GameofNim
             System.out.println("Player 1, you win!");
         else
             System.out.println("Player 2, you win!");
-    }    
+    }   //end of main 
 }
+
 
 
 
@@ -212,5 +137,6 @@ public class GameofNim
         
         System.out.println();
     }*/
+    
 
     

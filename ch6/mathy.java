@@ -118,36 +118,19 @@ public class mathy
     /**
      * displays marbles
      */
-    public void display(int [] row1, int [] row2, int [] row3, int [] row4)
+    public void display(int [] marbles)
     {
         
-        for (int m : row1)
+        
+        for (int i = 0; i < marbles.length; i++)
         {
-            System.out.print(m);            
+            String row = "";
+            for (int num = 0; num < marbles[i]; num++)
+                row += "0";
+            
+            System.out.println(row);
         }
-        
-        System.out.println();
-        
-        for (int m : row2)
-        {
-            System.out.print(m);            
-        }
-        
-        System.out.println();
-        
-        for (int m : row3)
-        {
-            System.out.print(m);            
-        }
-        
-        System.out.println();
-        
-        for (int m : row4)
-        {
-            System.out.print(m);            
-        }
-        
-        System.out.println();
+
     }
     
     /**
