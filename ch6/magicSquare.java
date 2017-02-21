@@ -1,4 +1,6 @@
 //Kathy Zhou
+//February 21, 2017
+//Magic Square
 
 
 public class magicSquare
@@ -9,7 +11,7 @@ public class magicSquare
     int [][] array;
     
     /**
-     * sets the magic number = 1 col of the array
+     * sets the magic number to 1 col of the array
      */
     public magicSquare(int [][] square)
     {
@@ -25,6 +27,7 @@ public class magicSquare
     
     /**
      * checks if the square is magic
+     * checks the sum of the rows, coloumns, and diagonals
      * @param
      */
     public boolean isMagic()
